@@ -46,6 +46,8 @@
             android:layout_height="40dp"
             android:background="#00000000"
             android:inputType="text"
+            android:textStyle="bold"
+            android:maxLines="1"
             android:padding="@dimen/base_margin"
             android:layout_marginTop="4dp"
             android:hint="@string/title"

@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -29,6 +31,7 @@ class UpdateFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             id = UpdateFragmentArgs.fromBundle(it).id
             title = UpdateFragmentArgs.fromBundle(it).title
@@ -63,7 +66,7 @@ class UpdateFragment : Fragment() {
         shareViewModel.update(item)
 
         findNavController().navigate(R.id.action_updateFragment_to_homeFragment)
-        view?.let { Snackbar.make(it, "Task Updated.",Snackbar.LENGTH_SHORT).show() }
+        Toast.makeText(requireContext(),"Notes Updated.",Toast.LENGTH_SHORT).show()
     }
 
     fun deleteNotes() {
